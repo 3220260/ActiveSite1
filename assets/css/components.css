@@ -1933,3 +1933,26 @@
     }
 }
 
+/* --- FIX VODAFONE / NOVA CARD OVERLAP ON DESKTOP --- */
+@media (min-width: 768px) {
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) {
+        grid-row: span 4 / span 4 !important;
+        min-height: 860px !important;
+    }
+
+    #offers-grid article:has([data-modal-target="novaLinePhone"]) {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Safari/older fallback αν δεν πιάσει το :has σωστά */
+@supports not selector(:has(*)) {
+    @media (min-width: 768px) {
+        #offers-grid > article:nth-child(2) {
+            grid-row: span 4 / span 4 !important;
+            min-height: 860px !important;
+        }
+    }
+}
+
