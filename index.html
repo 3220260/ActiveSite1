@@ -35,8 +35,8 @@
 
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260429-2">
   <link rel="stylesheet" href="assets/css/base.css?v=20260522-1">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260522-2">
-  <link rel="stylesheet" href="assets/css/animations.css?v=20260523-1">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260523-3">
+  <link rel="stylesheet" href="assets/css/animations.css?v=20260523-3">
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260522-1">
 
   <script type="application/ld+json">
@@ -202,10 +202,25 @@
           </p>
 
           <div class="official-intro-tags" aria-label="Κατηγορίες προσφορών">
-            <span><i class="fa-solid fa-mobile-screen"></i> Κινητή</span>
-            <span><i class="fa-solid fa-wifi"></i> Internet</span>
-            <span><i class="fa-solid fa-tv"></i> Τηλεόραση</span>
-            <span><i class="fa-solid fa-heart-pulse"></i> Υγεία</span>
+            <button type="button" data-modal-target="mobileModal">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span>Κινητή</span>
+            </button>
+
+            <button type="button" data-modal-target="internetChoiceModal">
+              <i class="fa-solid fa-wifi"></i>
+              <span>Internet</span>
+            </button>
+
+            <button type="button" data-modal-target="novaEonModal">
+              <i class="fa-solid fa-tv"></i>
+              <span>Τηλεόραση</span>
+            </button>
+
+            <button type="button" data-modal-target="healthModal">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>Υγεία</span>
+            </button>
           </div>
         </div>
       </div>
@@ -2269,15 +2284,6 @@
             </span>
             <span class="font-bold text-slate-700">Κινητή Τηλεφωνία</span>
         </button>
-
-
-        <button type="button" data-sidebar-target="vodafoneFixedModal" class="w-full text-left flex items-center gap-4 p-4 rounded-xl hover:bg-red-50 transition group border border-transparent hover:border-red-100">
-            <span class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center group-hover:scale-110 transition">
-                <i class="fa-solid fa-wifi"></i>
-            </span>
-            <span class="font-bold text-slate-700">Vodafone Σταθερή & Internet</span>
-        </button>
-
         <button type="button" data-sidebar-target="internetChoiceModal" class="w-full text-left flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 transition group border border-transparent hover:border-slate-200">
             <span class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center group-hover:scale-110 transition">
                 <i class="fa-solid fa-wifi"></i>

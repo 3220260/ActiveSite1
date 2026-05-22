@@ -108,7 +108,7 @@
     margin-top: 1.4rem;
 }
 
-.official-intro-tags span {
+.official-intro-tags button {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
@@ -159,11 +159,28 @@
         gap: 0.5rem;
     }
 
-    .official-intro-tags span {
+    .official-intro-tags button {
         flex: 1 1 calc(50% - 0.5rem);
         justify-content: center;
         font-size: 0.75rem;
         padding: 0.65rem 0.7rem;
     }
+}
+
+.official-intro-tags button {
+    cursor: pointer;
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.official-intro-tags button:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.32);
+    transform: translateY(-3px);
+}
+
+.official-intro-tags button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.45);
+    outline-offset: 3px;
 }
 

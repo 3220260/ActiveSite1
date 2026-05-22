@@ -335,19 +335,19 @@ body.overflow-hidden { overflow: hidden !important; overscroll-behavior: none; }
     animation: officialBadgeShine 4.5s ease-in-out infinite;
 }
 
-.official-intro-tags span {
+.official-intro-tags button {
     animation: officialTagFloat 4.5s ease-in-out infinite;
 }
 
-.official-intro-tags span:nth-child(2) {
+.official-intro-tags button:nth-child(2) {
     animation-delay: 0.25s;
 }
 
-.official-intro-tags span:nth-child(3) {
+.official-intro-tags button:nth-child(3) {
     animation-delay: 0.5s;
 }
 
-.official-intro-tags span:nth-child(4) {
+.official-intro-tags button:nth-child(4) {
     animation-delay: 0.75s;
 }
 
