@@ -70,7 +70,7 @@ function copyToClipboard(text, element) {
 }
 
 
-function copyIBAN(text, element) {
+async function copyIBAN(text, element) {
     try {
         await writeClipboard(text);
         showToast('Ο αριθμός λογαριασμού αντιγράφηκε!', 'success');
