@@ -268,6 +268,82 @@
 </button>
             </article>
 
+
+            <article class="bento-item min-h-[350px] md:min-h-0 md:col-span-3 md:row-span-2 bg-gradient-to-br from-red-700 via-red-600 to-slate-900 rounded-[2.5rem] p-7 border border-red-400/40 cursor-pointer relative overflow-hidden group hover:border-red-300 transition-all duration-500 shadow-2xl flex flex-col justify-between">
+
+                <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/20 opacity-70"></div>
+                <div class="absolute -right-10 -top-10 w-44 h-44 bg-white/10 blur-[80px] rounded-full"></div>
+
+                <i class="fa-solid fa-wifi absolute -left-6 -bottom-6 text-8xl text-white/[0.08] group-hover:text-white/[0.12] group-hover:scale-125 transition-all duration-700"></i>
+
+                <div class="relative z-10 w-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="flex flex-col gap-1">
+                            <div class="text-[10px] font-black tracking-[0.3em] text-white/80 uppercase mb-1">VODAFONE ΣΤΑΘΕΡΗ</div>
+                            <h3 class="text-2xl font-black text-white leading-tight">Σταθερή <br>και Internet</h3>
+                        </div>
+                        <div class="flex flex-col items-end gap-2">
+                            <span class="bg-white text-red-700 text-[9px] font-black px-2.5 py-1 rounded-lg shadow-lg uppercase tracking-tighter">Νέα Προσφορά</span>
+                            <i class="fa-solid fa-router text-white/70 group-hover:text-white transition-colors"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative overflow-hidden bg-white/10 border border-white/20 backdrop-blur-md p-4 rounded-[1.5rem] group-hover:bg-white/[0.16] transition-all duration-300">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-white"></div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white shadow-inner">
+                                <i class="fa-solid fa-gift text-xl"></i>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <span class="text-white font-black text-xl leading-none tracking-tight">2 ΜΗΝΕΣ ΔΩΡΕΑΝ</span>
+                                <span class="text-[10px] text-white/75 font-bold uppercase mt-1 tracking-widest">
+                                    στα FTTH πακέτα
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 space-y-2">
+                        <div class="flex items-center gap-2 text-[11px] text-white/85 font-medium italic">
+                            <i class="fa-solid fa-bolt-lightning text-white/60"></i>
+                            ADSL/FTTC, FTTH 100 Mbps, FTTH 300 Mbps
+                        </div>
+                        <div class="flex items-center gap-2 text-[11px] text-white/85 font-medium italic">
+                            <i class="fa-solid fa-phone-flip text-white/60"></i>
+                            Απεριόριστα σταθερά + 300' προς κινητά
+                        </div>
+                        <div class="flex items-center gap-2 text-[11px] text-white/85 font-medium italic">
+                            <i class="fa-solid fa-wifi text-white/60"></i>
+                            Δωρεάν router Wi-Fi
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 relative z-10">
+                    <div class="bg-white/10 border border-white/20 p-4 rounded-[1.8rem] backdrop-blur-sm transition-all flex items-center justify-between px-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-white/75 uppercase tracking-wider">από</span>
+                            <span class="text-4xl font-black text-white">16,00€</span>
+                        </div>
+
+                        <div class="text-right">
+                            <span class="text-[15px] font-black text-white/75 uppercase tracking-widest">
+                                τον μήνα
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    data-modal-target="vodafoneFixedModal"
+                    aria-label="Άνοιγμα προσφοράς Vodafone σταθερής και internet"
+                    class="absolute inset-0 z-10 rounded-[2.5rem]">
+                </button>
+            </article>
+
             <article class="bento-item min-h-[350px] md:min-h-0 md:col-span-3 md:row-span-2 bg-[#0f172a] rounded-[2.5rem] p-7 border border-slate-700/50 cursor-pointer relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500 shadow-2xl flex flex-col justify-between">
 
                 <div class="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -1917,6 +1993,126 @@
     </div>
 
 
+
+    <div id="vodafoneFixedModal" class="hidden fixed inset-0 z-[110] modal-backdrop flex items-center justify-center p-4">
+      <div class="bg-white w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden animate-[fadeIn_0.3s_ease-out] relative max-h-[90vh] overflow-y-auto custom-scroll">
+
+        <button type="button" data-modal-close="vodafoneFixedModal" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition z-20 shadow-sm backdrop-blur-md">✕</button>
+
+        <div class="bg-gradient-to-br from-red-700 via-red-600 to-slate-900 p-8 text-center relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-red-700 font-black text-sm uppercase tracking-widest mb-4">
+              Vodafone
+            </div>
+            <h3 class="text-white font-black text-3xl md:text-4xl leading-tight">Σταθερή Τηλεφωνία & Internet</h3>
+            <p class="text-red-100 text-sm md:text-base mt-2">Αποκλειστική προσφορά για τα μέλη του Συνεταιρισμού</p>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8 space-y-6">
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <article class="rounded-3xl border border-red-100 bg-red-50 p-5 text-center">
+              <div class="text-xs font-black text-red-700 uppercase tracking-widest mb-2">Πακέτο ADSL / FTTC</div>
+              <h4 class="font-black text-slate-900 text-lg">Σταθερή + Internet</h4>
+              <p class="text-sm text-slate-500 mt-1">έως 24 Mbps</p>
+              <div class="mt-4 text-4xl font-black text-red-600">16,00€</div>
+              <div class="text-xs font-bold text-slate-500 mt-1">με ΦΠΑ / μήνα</div>
+            </article>
+
+            <article class="rounded-3xl border border-red-100 bg-red-50 p-5 text-center">
+              <div class="text-xs font-black text-red-700 uppercase tracking-widest mb-2">Πακέτο FTTH 100 Mbps</div>
+              <h4 class="font-black text-slate-900 text-lg">Σταθερή + Internet</h4>
+              <p class="text-sm text-slate-500 mt-1">έως 100 Mbps</p>
+              <div class="mt-4 text-4xl font-black text-red-600">16,00€</div>
+              <div class="mt-2 inline-flex rounded-full bg-red-600 px-3 py-1 text-xs font-black text-white">2 μήνες δωρεάν</div>
+            </article>
+
+            <article class="rounded-3xl border border-red-100 bg-red-50 p-5 text-center">
+              <div class="text-xs font-black text-red-700 uppercase tracking-widest mb-2">Πακέτο FTTH 300 Mbps</div>
+              <h4 class="font-black text-slate-900 text-lg">Σταθερή + Internet</h4>
+              <p class="text-sm text-slate-500 mt-1">έως 300 Mbps</p>
+              <div class="mt-4 text-4xl font-black text-red-600">18,00€</div>
+              <div class="mt-2 inline-flex rounded-full bg-red-600 px-3 py-1 text-xs font-black text-white">2 μήνες δωρεάν</div>
+            </article>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 flex items-start gap-3">
+              <i class="fa-solid fa-phone-flip text-red-600 mt-1"></i>
+              <div>
+                <div class="font-black text-slate-900">Κλήσεις</div>
+                <p class="text-sm text-slate-600">Απεριόριστες κλήσεις σε σταθερά & 300 λεπτά προς κινητά.</p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 flex items-start gap-3">
+              <i class="fa-solid fa-screwdriver-wrench text-red-600 mt-1"></i>
+              <div>
+                <div class="font-black text-slate-900">Ενεργοποίηση</div>
+                <p class="text-sm text-slate-600">Δωρεάν εγκατάσταση και ενεργοποίηση.</p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 flex items-start gap-3">
+              <i class="fa-solid fa-wifi text-red-600 mt-1"></i>
+              <div>
+                <div class="font-black text-slate-900">Router</div>
+                <p class="text-sm text-slate-600">Δωρεάν router Wi-Fi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
+            <div class="font-black text-lg mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-file-signature"></i>
+              Απαραίτητα δικαιολογητικά
+            </div>
+            <ol class="space-y-2 text-sm list-decimal list-inside">
+              <li>Πρόσφατος λογαριασμός σταθερής από τον τρέχοντα πάροχο, τελευταίων 3 μηνών, όλες οι σελίδες.</li>
+              <li>Φωτογραφία αστυνομικής ταυτότητας, μπρος και πίσω.</li>
+              <li>
+                Υπεύθυνη Δήλωση εξουσιοδότησης. Στο πεδίο <strong>«Προς»</strong> γράφεις:
+                <strong>South Attica</strong>.
+              </li>
+            </ol>
+
+            <div class="mt-4 rounded-2xl bg-white border border-amber-200 p-4">
+              <div class="text-sm font-black text-slate-900 mb-2">
+                Κείμενο Υπεύθυνης Δήλωσης
+              </div>
+
+              <p class="text-sm text-slate-700 leading-relaxed italic">
+                «Εξουσιοδοτώ την <strong>South Attica</strong> όπως προβεί σε όλες τις απαραίτητες ενέργειες
+                αντί εμού για την ενεργοποίηση της σταθερής μου γραμμής με αριθμό τηλεφώνου
+                ................................ στη Vodafone, στην προσφορά ................................»
+              </p>
+
+              <p class="text-xs text-amber-800 font-bold mt-3">
+                Η Υπεύθυνη Δήλωση μπορεί να γίνει ηλεκτρονικά μέσω gov.gr ή με γνήσιο υπογραφής μέσω ΚΕΠ.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-3 md:grid-cols-3">
+            <a href="tel:2105245210" class="rounded-2xl bg-red-600 text-white px-5 py-4 font-black text-center hover:bg-red-700 transition">
+              <i class="fa-solid fa-phone mr-2"></i>210 5245210
+            </a>
+
+            <a href="tel:6985177202" class="rounded-2xl bg-slate-900 text-white px-5 py-4 font-black text-center hover:bg-slate-800 transition">
+              <i class="fa-solid fa-mobile-screen mr-2"></i>6985177202
+            </a>
+
+            <a href="mailto:synetelas2011@gmail.com" class="rounded-2xl bg-blue-600 text-white px-5 py-4 font-black text-center hover:bg-blue-700 transition">
+              <i class="fa-solid fa-envelope mr-2"></i>Αποστολή email
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
     <div id="cookieConsentBanner" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-[200] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 animate-[slideUp_0.5s_ease-out]">
         <div class="flex items-start gap-4 mb-4">
             <div class="bg-blue-100 p-3 rounded-full text-blue-600 shrink-0">
@@ -1962,6 +2158,14 @@
                 <i class="fa-solid fa-mobile-screen"></i>
             </span>
             <span class="font-bold text-slate-700">Κινητή Τηλεφωνία</span>
+        </button>
+
+
+        <button type="button" data-sidebar-target="vodafoneFixedModal" class="w-full text-left flex items-center gap-4 p-4 rounded-xl hover:bg-red-50 transition group border border-transparent hover:border-red-100">
+            <span class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center group-hover:scale-110 transition">
+                <i class="fa-solid fa-wifi"></i>
+            </span>
+            <span class="font-bold text-slate-700">Vodafone Σταθερή & Internet</span>
         </button>
 
         <button type="button" data-sidebar-target="novaLinePhone" class="w-full text-left flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 transition group border border-transparent hover:border-slate-200">
