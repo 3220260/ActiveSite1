@@ -542,16 +542,9 @@ function createProcessWizard(containerId, config, theme, steps) {
     );
     dots.dataset.processDots = '';
 
-    const stepNav = makeEl(
-        'div',
-        'process-step-scroll-nav'
-    );
-    stepNav.dataset.processStepNav = '';
-
     wizard.appendChild(header);
     wizard.appendChild(mobileBadge);
     wizard.appendChild(counter);
-    wizard.appendChild(stepNav);
     wizard.appendChild(dots);
 
     return wizard;
@@ -775,6 +768,81 @@ function resetProcessWizard(containerId) {
     ensureProcessWizard(containerId);
     showProcessWizardStep(containerId, 0);
 }
+
+
+/* --- Mobile swipe navigation for activation guide --- */
+let processSwipeStartX = 0;
+let processSwipeStartY = 0;
+let processSwipeStartTime = 0;
+let processSwipeContainerId = null;
+
+function getProcessContainerFromTarget(target) {
+    const processRoot = target?.closest?.('#v-port, #v-new, #n-port, #n-new');
+    return processRoot?.id || null;
+}
+
+function shouldIgnoreProcessSwipe(target) {
+    if (!target || !target.closest) return false;
+
+    return Boolean(target.closest(
+        'button, a, input, textarea, select, [role="button"], [contenteditable="true"], [data-preview-src], [data-copy-iban], [data-copy-email]'
+    ));
+}
+
+function handleProcessSwipeStart(event) {
+    if (!event.touches || event.touches.length !== 1) return;
+    if (window.innerWidth > 768) return;
+    if (shouldIgnoreProcessSwipe(event.target)) return;
+
+    const containerId = getProcessContainerFromTarget(event.target);
+    if (!containerId || !PROCESS_WIZARDS[containerId]) return;
+
+    const touch = event.touches[0];
+
+    processSwipeStartX = touch.clientX;
+    processSwipeStartY = touch.clientY;
+    processSwipeStartTime = Date.now();
+    processSwipeContainerId = containerId;
+}
+
+function handleProcessSwipeEnd(event) {
+    if (!processSwipeContainerId) return;
+    if (window.innerWidth > 768) {
+        processSwipeContainerId = null;
+        return;
+    }
+
+    const touch = event.changedTouches && event.changedTouches[0];
+    if (!touch) {
+        processSwipeContainerId = null;
+        return;
+    }
+
+    const dx = touch.clientX - processSwipeStartX;
+    const dy = touch.clientY - processSwipeStartY;
+    const duration = Date.now() - processSwipeStartTime;
+
+    const horizontalEnough = Math.abs(dx) > 70;
+    const verticalSmall = Math.abs(dy) < 65;
+    const fastEnough = duration < 900;
+
+    if (horizontalEnough && verticalSmall && fastEnough) {
+        const currentIndex = processWizardState[processSwipeContainerId] || 0;
+        const container = document.getElementById(processSwipeContainerId);
+        const total = getProcessSteps(container).length;
+
+        if (dx < 0 && currentIndex < total - 1) {
+            showProcessWizardStep(processSwipeContainerId, currentIndex + 1);
+        }
+
+        if (dx > 0 && currentIndex > 0) {
+            showProcessWizardStep(processSwipeContainerId, currentIndex - 1);
+        }
+    }
+
+    processSwipeContainerId = null;
+}
+
 
 function activateVisibleProcessWizard(root) {
     if (!root) return;
@@ -1138,6 +1206,8 @@ function initializePage() {
 
     // Delegated UI listeners
     document.addEventListener('click', handleDocumentClick);
+document.addEventListener('touchstart', handleProcessSwipeStart, { passive: true });
+document.addEventListener('touchend', handleProcessSwipeEnd, { passive: true });
     document.addEventListener('keydown', handleDocumentKeydown);
     document.addEventListener('touchstart', handleSwipeBackTouchStart, { passive: true });
     document.addEventListener('touchend', handleSwipeBackTouchEnd, { passive: true });

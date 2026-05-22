@@ -1900,3 +1900,12 @@
     }
 }
 
+/* --- HIDE OLD VISIBLE STEP NAV, KEEP MOBILE SWIPE ONLY --- */
+.process-step-scroll-nav {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
