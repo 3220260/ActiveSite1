@@ -1909,3 +1909,27 @@
     overflow: hidden !important;
 }
 
+/* --- DESKTOP OFFER CARD HEIGHT FIX --- */
+@media (min-width: 768px) {
+    #offers-grid {
+        grid-auto-rows: 220px;
+    }
+
+    #offers-grid > article {
+        min-height: 0;
+    }
+
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) {
+        min-height: 680px;
+    }
+}
+
+/* Safari safe fallback αν το :has δεν εφαρμοστεί σωστά */
+@supports not selector(:has(*)) {
+    @media (min-width: 768px) {
+        #offers-grid > article:nth-child(2) {
+            min-height: 680px;
+        }
+    }
+}
+
