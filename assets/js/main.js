@@ -455,12 +455,12 @@ function createProcessWizard(containerId, config, theme, steps) {
         : 'bg-orange-500 text-blue-700 border-orange-300';
 
     const closeButtonClass = isVoda
-        ? 'w-10 h-10 rounded-full bg-red-600 text-white text-2xl font-black flex items-center justify-center hover:bg-red-700 transition border-2 border-red-300 shadow-md'
-        : 'w-10 h-10 rounded-full bg-orange-100 text-blue-700 text-2xl font-black flex items-center justify-center hover:bg-orange-200 transition border-2 border-orange-300 shadow-md';
+        ? 'liquid-close w-10 h-10 rounded-full bg-red-600 text-white text-2xl font-black flex items-center justify-center hover:bg-red-700 transition border-2 border-red-300 shadow-md'
+        : 'liquid-close w-10 h-10 rounded-full bg-orange-100 text-blue-700 text-2xl font-black flex items-center justify-center hover:bg-orange-200 transition border-2 border-orange-300 shadow-md';
 
     const wizard = makeEl(
         'div',
-        `mb-4 rounded-2xl border ${theme.border} ${theme.bg} p-3 md:p-5 shadow-sm`
+        `process-wizard-sticky mb-4 rounded-2xl border ${theme.border} ${theme.bg} p-3 md:p-5 shadow-sm`
     );
 
     wizard.dataset.processWizard = 'true';
