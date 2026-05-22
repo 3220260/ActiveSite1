@@ -340,3 +340,73 @@
     }
 }
 
+/* --- CLEAN DARK MOBILE CARD FIX --- */
+.premium-mobile-card {
+    background:
+        linear-gradient(135deg, #061226 0%, #0f2b5c 48%, #2b0b15 100%) !important;
+    isolation: isolate;
+}
+
+.premium-mobile-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(2, 6, 23, 0.15), rgba(2, 6, 23, 0.82)),
+        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.18), transparent 32%),
+        radial-gradient(circle at 20% 10%, rgba(37, 99, 235, 0.22), transparent 34%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.premium-mobile-card .mobile-offer-bg {
+    opacity: 0.42;
+    z-index: 0;
+}
+
+.premium-mobile-card .mobile-offer-bg::before {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.18), transparent 32%),
+        radial-gradient(circle at 80% 25%, rgba(220, 38, 38, 0.16), transparent 34%) !important;
+    opacity: 0.45 !important;
+    filter: blur(18px) !important;
+}
+
+.premium-mobile-card .mobile-offer-bg::after {
+    opacity: 0.18;
+}
+
+.premium-mobile-card .mobile-signal-lines {
+    opacity: 0.35;
+}
+
+.premium-mobile-card .mobile-network-chip {
+    background: rgba(15, 23, 42, 0.72);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.mobile-title-panel {
+    background: rgba(2, 6, 23, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+}
+
+.premium-mobile-card .relative.z-10 {
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 640px) {
+    .premium-mobile-card .mobile-offer-bg {
+        opacity: 0.28;
+    }
+
+    .premium-mobile-card .mobile-signal-lines {
+        opacity: 0.18;
+    }
+
+    .premium-mobile-card .mobile-network-chip {
+        opacity: 0.65;
+    }
+}
+
