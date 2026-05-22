@@ -279,20 +279,7 @@ body.overflow-hidden { overflow: hidden !important; overscroll-behavior: none; }
     }
 }
 
-/* --- 11. REDUCED MOTION --- */
-@media (prefers-reduced-motion: reduce) {
-    .full-red-blue-gradient,
-    .reveal,
-    .character-float,
-    .bubble-appear,
-    .ekg-line,
-    .animate-ekg-line,
-    .pulse-blip,
-    .road-scene * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+
 /* buttons inside dikaiologitika */
 #vodaChoiceOptions button,
 #novaChoiceOptions button {
