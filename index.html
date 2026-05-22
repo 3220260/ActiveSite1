@@ -35,7 +35,7 @@
 
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260429-2">
   <link rel="stylesheet" href="assets/css/base.css?v=20260522-1">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260523-16">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260523-17">
   <link rel="stylesheet" href="assets/css/animations.css?v=20260523-7">
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260522-1">
 
@@ -693,35 +693,62 @@
     </div>
 
     <!-- NOVA - ΕΠΙΛΟΓΗ ΤΥΠΟΥ ΔΙΑΔΙΚΑΣΙΑΣ -->
-   <div id="novaChoiceModal" class="hidden fixed inset-0 z-[9999] modal-backdrop flex items-stretch justify-center md:items-center p-0 md:p-4">
-  <div class="bg-white w-full h-full md:h-[300px] md:max-w-lg md:rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+    <div id="novaChoiceModal" class="hidden fixed inset-0 z-[9999] modal-backdrop flex items-center justify-center p-4">
+      <div class="nova-choice-modal bg-white w-full max-w-2xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
 
-    <div class="bg-orange-500 p-5 flex justify-between items-center text-blue-600 border-orange-100 border-blue-400">
-        <h3 class="font-black text-lg">
-        <i class="fa-solid fa-file-contract mr-2"></i>
-        NOVA Q - Δικαιολογητικά
-        </h3>
-        <button type="button"
-            data-modal-close="novaChoiceModal"
-            data-modal-target="mobileModal"
-            class="liquid-close w-10 h-10 rounded-full bg-blue-100 hover:bg-red-500 text-base text-2xl flex items-center justify-center border-2 border-blue-200 shadow-md transition"
-            aria-label="Πίσω στις προσφορές κινητής"
-            >
-            &times;
-        </button>
-    </div>
+        <div class="nova-choice-hero">
+          <div class="nova-choice-glow nova-choice-glow-one"></div>
+          <div class="nova-choice-glow nova-choice-glow-two"></div>
 
-        <div class="p-6 bg-slate-50 flex-1">
-            <p class="text-sm  font-semibold text-slate-500 mb-5 text-center">
-                Επιλέξτε τύπο διαδικασίας <br>
-                (πάρε νέο νούμερο ή κράτα το δικό σου)
-            </p>
-            <div
-                id="novaChoiceOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          <div class="relative z-10 flex items-start justify-between gap-4">
+            <div class="min-w-0">
+              <div class="nova-choice-kicker">
+                <i class="fa-solid fa-file-contract"></i>
+                NOVA Q
+              </div>
+
+              <h3 class="nova-choice-title">
+                Δικαιολογητικά σύνδεσης
+              </h3>
+
+              <p class="nova-choice-subtitle">
+                Επίλεξε αν θέλεις νέο αριθμό ή αν θέλεις να κρατήσεις το υπάρχον νούμερό σου.
+              </p>
             </div>
+
+            <button
+              type="button"
+              data-modal-close="novaChoiceModal"
+              data-modal-target="mobileModal"
+              class="liquid-close nova-choice-close"
+              aria-label="Πίσω στις προσφορές κινητής">
+              ✕
+            </button>
+          </div>
         </div>
 
-    </div>
+        <div class="nova-choice-body">
+          <div class="nova-choice-info">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Διάλεξε τύπο διαδικασίας για να δεις τα απαραίτητα βήματα και έντυπα.</span>
+          </div>
+
+          <div id="novaChoiceOptions" class="nova-choice-options"></div>
+
+          <div class="nova-choice-help">
+            <div>
+              <strong>Νέος αριθμός</strong>
+              <span>Ξεκινάς νέα σύνδεση με νέο νούμερο.</span>
+            </div>
+
+            <div>
+              <strong>Φορητότητα</strong>
+              <span>Κρατάς το υπάρχον νούμερό σου και το μεταφέρεις.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div id="vodaModal" class="hidden fixed inset-0 z-[70] modal-backdrop flex items-stretch justify-center md:items-center p-0 md:p-4">
