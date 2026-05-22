@@ -177,6 +177,12 @@ function resetSwipeBackTracking() {
 function shouldIgnoreSwipeBackTarget(target) {
     if (!target || !target.closest) return false;
 
+    // Μην αφήνεις το γενικό swipe-back να δουλεύει μέσα στον Οδηγό Ενεργοποίησης.
+    // Εκεί έχουμε δικό μας swipe δεξιά/αριστερά για βήματα.
+    if (target.closest('#vodaModal, #novaModal, #v-port, #v-new, #n-port, #n-new, [data-process-wizard], [data-process-step]')) {
+        return true;
+    }
+
     if (target.closest('input, textarea, select, button, a, [role="button"], [contenteditable="true"]')) {
         return true;
     }
