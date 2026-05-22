@@ -177,8 +177,14 @@ function resetSwipeBackTracking() {
 function shouldIgnoreSwipeBackTarget(target) {
     if (!target || !target.closest) return false;
 
+    // Όταν είμαστε μέσα σε οποιοδήποτε modal, το γενικό browser swipe-back
+    // δεν πρέπει να τρέχει ποτέ, γιατί στέλνει τον χρήστη στην αρχική/προηγούμενη σελίδα.
+    // Τα modals/οδηγοί έχουν δική τους πλοήγηση.
+    if (target.closest('.modal-backdrop')) {
+        return true;
+    }
+
     // Μην αφήνεις το γενικό swipe-back να δουλεύει μέσα στον Οδηγό Ενεργοποίησης.
-    // Εκεί έχουμε δικό μας swipe δεξιά/αριστερά για βήματα.
     if (target.closest('#vodaModal, #novaModal, #v-port, #v-new, #n-port, #n-new, [data-process-wizard], [data-process-step]')) {
         return true;
     }
@@ -297,10 +303,16 @@ function handleSwipeBackTouchEnd(event) {
         });
 
         if (handleProcessWizardSwipeBack()) {
-        return;
-    }
+            return;
+        }
 
-    window.history.back();
+        // Extra ασφάλεια: αν υπάρχει ανοιχτό modal, μη χρησιμοποιείς browser history back.
+        // Αλλιώς σε Safari/iPhone μπορεί να πετάξει τον χρήστη στην αρχική.
+        if (document.querySelector('.modal-backdrop:not(.hidden)')) {
+            return;
+        }
+
+        window.history.back();
     }
 }
 
