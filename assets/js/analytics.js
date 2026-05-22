@@ -12,6 +12,7 @@ const TRACKED_OFFERS = Object.freeze({
     vodaModal: 'Vodafone CU',
     novaModal: 'NOVA Q',
     novaLinePhone: 'Σταθερό και Internet',
+    vodafoneFixedModal: 'Vodafone Σταθερή & Internet',
     novaEonModal: 'NOVA EON TV',
     healthModal: 'Προσφορά Υγείας',
     gprotasisModal: 'GProtasis',
