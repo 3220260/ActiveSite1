@@ -35,7 +35,7 @@
 
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260429-2">
   <link rel="stylesheet" href="assets/css/base.css?v=20260522-1">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260523-11">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260523-12">
   <link rel="stylesheet" href="assets/css/animations.css?v=20260523-7">
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260522-1">
 
@@ -610,7 +610,7 @@
         <h3 class="text-xl font-black text-slate-900 uppercase tracking-tight">Επιλέξτε Πάροχο</h3>
         <button type="button"
             data-modal-close="mobileModal"
-            class="w-10 h-10 rounded-full bg-slate-100 hover:bg-red-500 hover:text-white flex items-center justify-center text-slate-600 transition-colors"
+            class="liquid-close w-10 h-10 rounded-full bg-slate-100 hover:bg-red-500 hover:text-white flex items-center justify-center text-slate-600 transition-colors"
         >&times;</button>
         </div>
 
@@ -638,7 +638,7 @@
         <button type="button"
             data-modal-close="vodaChoiceModal"
             data-modal-target="mobileModal"
-            class="text-white hover:text-red-200 text-2xl"
+            class="liquid-close text-white hover:text-red-200 text-2xl"
             aria-label="Πίσω στις προσφορές κινητής"
         >
             &times;
@@ -671,7 +671,7 @@
         <button type="button"
             data-modal-close="novaChoiceModal"
             data-modal-target="mobileModal"
-            class="w-10 h-10 rounded-full bg-blue-100 hover:bg-red-500 text-base text-2xl flex items-center justify-center border-2 border-blue-200 shadow-md transition"
+            class="liquid-close w-10 h-10 rounded-full bg-blue-100 hover:bg-red-500 text-base text-2xl flex items-center justify-center border-2 border-blue-200 shadow-md transition"
             aria-label="Πίσω στις προσφορές κινητής"
             >
             &times;
@@ -1665,7 +1665,7 @@
             <button
                 type="button"
                 data-modal-close="novaLinePhone"
-                class="nova-sticky-close"
+                class="liquid-close nova-sticky-close"
                 aria-label="Κλείσιμο προσφοράς Nova">
                 ✕
             </button>
@@ -1806,7 +1806,7 @@
             <i class="fa-solid fa-tv text-blue-400"></i>
             Διαδικασία Ενεργοποίησης EON TV
         </h3>
-        <button type="button" data-modal-close="novaEonModal" class="text-white hover:text-blue-300 text-2xl">&times;</button>
+        <button type="button" data-modal-close="novaEonModal" class="liquid-close text-white hover:text-blue-300 text-2xl">&times;</button>
     </div>
 
     <div class="overflow-y-auto p-4 md:p-8 bg-white grow custom-scroll">
@@ -1910,7 +1910,7 @@
                     <h3 class="font-bold text-lg md:text-xl leading-none">ΠΑΡΟΧΕΣ ΥΓΕΙΑΣ</h3>
                 </div>
             </div>
-            <button type="button" data-modal-close="healthModal" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition text-2xl leading-none pb-1">&times;</button>
+            <button type="button" data-modal-close="healthModal" class="liquid-close w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition text-2xl leading-none pb-1">&times;</button>
         </div>
 
         <div class="overflow-y-auto p-4 md:p-8 bg-slate-50 grow custom-scroll">
@@ -2062,7 +2062,7 @@
 
         <button type="button"
           data-modal-close="internetChoiceModal"
-          class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition z-20 shadow-sm backdrop-blur-md">
+          class="liquid-close absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition z-20 shadow-sm backdrop-blur-md">
           ✕
         </button>
 
@@ -2156,7 +2156,7 @@
           <button
             type="button"
             data-modal-close="vodafoneFixedModal"
-            class="vodafone-sticky-close"
+            class="liquid-close vodafone-sticky-close"
             aria-label="Κλείσιμο προσφοράς Vodafone">
             ✕
           </button>
@@ -2406,7 +2406,7 @@
     <div id="infoCoopModal" class="hidden fixed inset-0 z-[110] modal-backdrop flex items-center justify-center p-4">
     <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden animate-[fadeIn_0.3s_ease-out] relative max-h-[90vh] overflow-y-auto custom-scroll">
 
-        <button type="button" data-modal-close="infoCoopModal" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition z-20 shadow-sm backdrop-blur-md">✕</button>
+        <button type="button" data-modal-close="infoCoopModal" class="liquid-close absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition z-20 shadow-sm backdrop-blur-md">✕</button>
 
         <div class="bg-[#0f2b5c] p-8 text-center relative overflow-hidden shrink-0">
             <div class="absolute inset-0 bg-[url('../images/LOGO.webp')] bg-center bg-no-repeat opacity-10 blur-sm bg-contain"></div>
@@ -2649,7 +2649,7 @@
             <i class="fa-solid fa-shield-halved text-blue-300"></i>
             Προσωπικά Δεδομένα
         </h3>
-        <button type="button" data-modal-close="privacyModal" class="text-white hover:text-slate-300 text-2xl">&times;</button>
+        <button type="button" data-modal-close="privacyModal" class="liquid-close text-white hover:text-slate-300 text-2xl">&times;</button>
         </div>
 
         <div class="p-5 space-y-3 text-sm text-slate-600 leading-relaxed">
@@ -2674,7 +2674,7 @@
             <i class="fa-solid fa-cookie-bite text-amber-300"></i>
             Cookies
         </h3>
-        <button type="button" data-modal-close="cookiesModal" class="text-white hover:text-slate-300 text-2xl">&times;</button>
+        <button type="button" data-modal-close="cookiesModal" class="liquid-close text-white hover:text-slate-300 text-2xl">&times;</button>
         </div>
 
         <div class="p-5 space-y-3 text-sm text-slate-600 leading-relaxed">
@@ -2699,7 +2699,7 @@
             <i class="fa-solid fa-address-book text-emerald-300"></i>
             Επικοινωνία
         </h3>
-        <button type="button" data-modal-close="contactInfoModal" class="text-white hover:text-slate-300 text-2xl">&times;</button>
+        <button type="button" data-modal-close="contactInfoModal" class="liquid-close text-white hover:text-slate-300 text-2xl">&times;</button>
         </div>
 
         <div class="p-5 space-y-3 text-sm text-slate-700">

@@ -1046,3 +1046,105 @@
     }
 }
 
+/* --- LIQUID GLASS CLOSE BUTTONS --- */
+.liquid-close {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 9999px !important;
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.08)) !important;
+    border: 1px solid rgba(255,255,255,0.28) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        0 12px 30px rgba(15,23,42,0.25) !important;
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.liquid-close::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: inherit;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.55), transparent 32%),
+        linear-gradient(145deg, rgba(255,255,255,0.18), transparent 55%);
+    opacity: 0.55;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.liquid-close::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -90%;
+    width: 65%;
+    height: 220%;
+    transform: rotate(22deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.38),
+        transparent
+    );
+    opacity: 0;
+    pointer-events: none;
+}
+
+.liquid-close:hover {
+    transform: scale(1.06) rotate(3deg);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.34), rgba(255,255,255,0.12)) !important;
+    border-color: rgba(255,255,255,0.46) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.48),
+        0 16px 42px rgba(15,23,42,0.32) !important;
+}
+
+.liquid-close:hover::after {
+    animation: liquidCloseShine 0.75s ease forwards;
+}
+
+.liquid-close:active {
+    transform: scale(0.96);
+}
+
+.liquid-close:focus-visible {
+    outline: 3px solid rgba(255,255,255,0.55);
+    outline-offset: 3px;
+}
+
+@keyframes liquidCloseShine {
+    from {
+        left: -90%;
+        opacity: 0;
+    }
+    35% {
+        opacity: 1;
+    }
+    to {
+        left: 130%;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .liquid-close {
+        min-width: 2.25rem;
+        min-height: 2.25rem;
+    }
+}
+
