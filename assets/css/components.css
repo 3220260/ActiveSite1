@@ -428,3 +428,131 @@
     pointer-events: none;
 }
 
+/* --- MOBILE PROVIDER CTA --- */
+.mobile-provider-cta {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.86)),
+        linear-gradient(90deg, rgba(220, 38, 38, 0.18), rgba(37, 99, 235, 0.18));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.32);
+    backdrop-filter: blur(14px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mobile-provider-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.10),
+        transparent
+    );
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+}
+
+.group:hover .mobile-provider-cta {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.30);
+    box-shadow: 0 22px 55px rgba(37, 99, 235, 0.22);
+}
+
+.group:hover .mobile-provider-cta::before {
+    transform: translateX(120%);
+}
+
+.mobile-provider-cta-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.mobile-provider-label {
+    color: rgba(226, 232, 240, 0.82);
+    font-size: 0.72rem;
+    font-weight: 950;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.mobile-provider-arrow {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.group:hover .mobile-provider-arrow {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.mobile-provider-brands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-top: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.mobile-provider-vodafone,
+.mobile-provider-nova {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -0.04em;
+}
+
+.mobile-provider-vodafone {
+    color: #fecaca;
+    text-shadow: 0 0 18px rgba(248, 113, 113, 0.28);
+}
+
+.mobile-provider-nova {
+    color: #bfdbfe;
+    text-shadow: 0 0 18px rgba(96, 165, 250, 0.28);
+}
+
+.mobile-provider-divider {
+    width: 1px;
+    height: 1.75rem;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.mobile-provider-bottom {
+    margin-top: 0.75rem;
+    color: rgba(241, 245, 249, 0.72);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .mobile-provider-cta {
+        padding: 0.9rem;
+    }
+
+    .mobile-provider-label {
+        font-size: 0.64rem;
+    }
+
+    .mobile-provider-bottom {
+        font-size: 0.72rem;
+    }
+}
+
