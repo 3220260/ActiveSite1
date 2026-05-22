@@ -264,3 +264,166 @@ body.overflow-hidden { overflow: hidden !important; overscroll-behavior: none; }
     }
 }
 
+/* --- OFFICIAL INTRO PREMIUM MOTION --- */
+.official-intro-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(59, 130, 246, 0.75),
+        rgba(239, 68, 68, 0.75),
+        rgba(255, 255, 255, 0.15)
+    );
+    background-size: 250% 250%;
+    animation: officialBorderFlow 7s ease-in-out infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.official-intro-card::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -80%;
+    width: 55%;
+    height: 180%;
+    transform: rotate(18deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.16),
+        transparent
+    );
+    animation: officialLightSweep 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.official-intro-glow-blue {
+    animation: officialGlowFloatBlue 8s ease-in-out infinite;
+}
+
+.official-intro-glow-red {
+    animation: officialGlowFloatRed 9s ease-in-out infinite;
+}
+
+.official-intro-badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.official-intro-badge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    animation: officialBadgeShine 4.5s ease-in-out infinite;
+}
+
+.official-intro-tags span {
+    animation: officialTagFloat 4.5s ease-in-out infinite;
+}
+
+.official-intro-tags span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.official-intro-tags span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.official-intro-tags span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.official-intro-tags i {
+    animation: officialIconPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes officialBorderFlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        opacity: 0.75;
+    }
+    50% {
+        background-position: 100% 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes officialLightSweep {
+    0%, 45% {
+        left: -80%;
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+    }
+    100% {
+        left: 130%;
+        opacity: 0;
+    }
+}
+
+@keyframes officialGlowFloatBlue {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-30px, 28px) scale(1.15);
+    }
+}
+
+@keyframes officialGlowFloatRed {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(34px, -24px) scale(1.12);
+    }
+}
+
+@keyframes officialBadgeShine {
+    0%, 35% {
+        left: -120%;
+    }
+    65%, 100% {
+        left: 130%;
+    }
+}
+
+@keyframes officialTagFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes officialIconPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.18);
+        opacity: 1;
+    }
+}
+
