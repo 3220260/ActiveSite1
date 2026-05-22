@@ -542,9 +542,16 @@ function createProcessWizard(containerId, config, theme, steps) {
     );
     dots.dataset.processDots = '';
 
+    const stepNav = makeEl(
+        'div',
+        'process-step-scroll-nav'
+    );
+    stepNav.dataset.processStepNav = '';
+
     wizard.appendChild(header);
     wizard.appendChild(mobileBadge);
     wizard.appendChild(counter);
+    wizard.appendChild(stepNav);
     wizard.appendChild(dots);
 
     return wizard;
@@ -726,6 +733,33 @@ function showProcessWizardStep(containerId, index) {
         });
     }
 
+    const stepNav = wizard.querySelector('[data-process-step-nav]');
+    if (stepNav) {
+        stepNav.innerHTML = '';
+
+        steps.forEach((step, navIndex) => {
+            const isActive = navIndex === safeIndex;
+            const stepButton = makeEl(
+                'button',
+                `process-step-scroll-button ${isActive ? 'is-active' : ''}`,
+                `${navIndex + 1}. ${getProcessStepTitle(step, navIndex)}`
+            );
+
+            stepButton.type = 'button';
+            stepButton.dataset.processGo = String(navIndex);
+            stepNav.appendChild(stepButton);
+        });
+
+        const activeButton = stepNav.querySelector('.process-step-scroll-button.is-active');
+        if (activeButton) {
+            activeButton.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }
+
     if (prev) prev.disabled = safeIndex === 0;
 
     if (next) {
@@ -855,6 +889,21 @@ function handleDocumentClick(event) {
         if (currentModal && document.getElementById(choiceModalId)) {
             closeModal(currentModal.id, false);
             openModal(choiceModalId);
+        }
+
+        return;
+    }
+
+    const processGoTarget = event.target.closest('[data-process-go]');
+    if (processGoTarget) {
+        event.preventDefault();
+
+        const wizard = processGoTarget.closest('[data-process-wizard]');
+        const containerId = wizard?.dataset.processContainer;
+        const nextIndex = Number(processGoTarget.dataset.processGo || 0);
+
+        if (containerId && !Number.isNaN(nextIndex)) {
+            showProcessWizardStep(containerId, nextIndex);
         }
 
         return;
