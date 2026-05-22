@@ -32,3 +32,138 @@
         display: inline-flex !important;
     }
 }
+
+/* --- OFFICIAL INTRO SECTION --- */
+.official-intro {
+    position: relative;
+}
+
+.official-intro-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background:
+        linear-gradient(135deg, rgba(15, 43, 92, 0.96), rgba(15, 23, 42, 0.98)),
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.35), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(220, 38, 38, 0.28), transparent 30%);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18);
+}
+
+.official-intro-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.official-intro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #dbeafe;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+}
+
+.official-intro-title {
+    margin-top: 1rem;
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 0.95;
+    font-weight: 950;
+    letter-spacing: -0.06em;
+}
+
+.official-intro-title span {
+    display: block;
+    margin-top: 0.55rem;
+    max-width: 720px;
+    color: #bfdbfe;
+    font-size: clamp(1.25rem, 2.4vw, 2.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.official-intro-text {
+    margin-top: 1.15rem;
+    max-width: 760px;
+    color: rgba(241, 245, 249, 0.86);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+.official-intro-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.4rem;
+}
+
+.official-intro-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 900;
+    backdrop-filter: blur(10px);
+}
+
+.official-intro-glow {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 9999px;
+    filter: blur(55px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.official-intro-glow-blue {
+    right: -6rem;
+    top: -5rem;
+    background: #2563eb;
+}
+
+.official-intro-glow-red {
+    left: -7rem;
+    bottom: -7rem;
+    background: #dc2626;
+}
+
+@media (max-width: 640px) {
+    .official-intro-card {
+        padding: 1.25rem;
+        border-radius: 1.5rem;
+    }
+
+    .official-intro-text {
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+
+    .official-intro-tags {
+        gap: 0.5rem;
+    }
+
+    .official-intro-tags span {
+        flex: 1 1 calc(50% - 0.5rem);
+        justify-content: center;
+        font-size: 0.75rem;
+        padding: 0.65rem 0.7rem;
+    }
+}
+
