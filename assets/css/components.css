@@ -410,3 +410,21 @@
     }
 }
 
+.premium-mobile-card::after {
+    content: "";
+    position: absolute;
+    top: -45%;
+    left: -75%;
+    width: 45%;
+    height: 190%;
+    transform: rotate(18deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.12),
+        transparent
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
