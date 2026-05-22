@@ -7,13 +7,6 @@
    1. CORE SETTINGS & TRACKING
    ========================================= */
 const GA_MEASUREMENT_ID = 'G-LHQ9SHKY6J';
-const IMAGE_PREVIEW_MIN_ZOOM = 1;
-const IMAGE_PREVIEW_MAX_ZOOM = 4;
-const MIN_CARD_VIEW_SECONDS = 2;
-const SWIPE_BACK_MIN_DISTANCE = 90;
-const SWIPE_BACK_MAX_VERTICAL_DISTANCE = 70;
-const SWIPE_BACK_MAX_DURATION_MS = 900;
-const SWIPE_BACK_EDGE_GUARD = 24;
 const TRACKED_OFFERS = Object.freeze({
     mobileModal: 'Κινητή Τηλεφωνία',
     vodaModal: 'Vodafone CU',
@@ -23,24 +16,6 @@ const TRACKED_OFFERS = Object.freeze({
     healthModal: 'Προσφορά Υγείας',
     gprotasisModal: 'GProtasis',
 });
-
-let pageScrollY = 0;
-let imagePreviewZoom = 1;
-let imagePreviewPinchDistance = 0;
-let imagePreviewPinchZoom = 1;
-let imagePreviewDragging = false;
-let imagePreviewDragStartX = 0;
-let imagePreviewDragStartY = 0;
-let imagePreviewDragScrollLeft = 0;
-let imagePreviewDragScrollTop = 0;
-let swipeBackStartX = 0;
-let swipeBackStartY = 0;
-let swipeBackStartTime = 0;
-let swipeBackTracking = false;
-const activeOfferViews = {};
-const offerCardViewStarts = new Map();
-const offerCardViewed = new Set();
-let trackedOfferCards = [];
 
 function loadAllTracking() {
     if (window.trackingLoaded) return;
@@ -85,7 +60,6 @@ function getOpenOfferContext() {
 
     return openOffer ? { offer_id: openOffer, offer_name: getOfferName(openOffer) } : {};
 }
-
 
 function getOpenTrackedModalId() {
     return Object.keys(TRACKED_OFFERS).find((modalId) => {
