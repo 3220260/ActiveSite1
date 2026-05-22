@@ -1335,11 +1335,7 @@ function switchTab(showId, hideId, activeBtnId, inactiveBtnId) {
 }
 
 /* =========================================
-   3. COPY FUNCTIONS
-   ========================================= */
-async /* ========================================= 4.
-COOKIE CONSENT ========================================= */ /* =========================================
-   5. COOKIE CONSENT
+   4. COOKIE CONSENT
    ========================================= */
 function handleCookieConsent(action) {
     const banner = document.getElementById('cookieConsentBanner');
