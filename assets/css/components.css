@@ -1344,3 +1344,245 @@
     }
 }
 
+/* --- PREMIUM VODAFONE CHOICE MODAL --- */
+.voda-choice-modal {
+    isolation: isolate;
+}
+
+.voda-choice-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+    background:
+        linear-gradient(135deg, #b91c1c 0%, #ef000f 48%, #111827 100%);
+}
+
+.voda-choice-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.16;
+    pointer-events: none;
+}
+
+.voda-choice-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.voda-choice-glow-one {
+    width: 13rem;
+    height: 13rem;
+    right: -4rem;
+    top: -4rem;
+    background: rgba(255,255,255,0.20);
+}
+
+.voda-choice-glow-two {
+    width: 15rem;
+    height: 15rem;
+    left: -6rem;
+    bottom: -7rem;
+    background: rgba(15,23,42,0.45);
+}
+
+.voda-choice-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: 9999px;
+    padding: 0.45rem 0.75rem;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 950;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+}
+
+.voda-choice-title {
+    margin-top: 1rem;
+    color: #ffffff;
+    font-size: clamp(1.7rem, 4vw, 2.65rem);
+    line-height: 0.95;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+}
+
+.voda-choice-subtitle {
+    margin-top: 0.8rem;
+    max-width: 34rem;
+    color: rgba(255,255,255,0.82);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    font-weight: 700;
+}
+
+.voda-choice-close {
+    flex-shrink: 0;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    font-size: 1.1rem;
+}
+
+.voda-choice-body {
+    padding: 1.25rem;
+    background:
+        radial-gradient(circle at top right, rgba(239, 68, 68, 0.08), transparent 32%),
+        #f8fafc;
+}
+
+.voda-choice-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    border-radius: 1.25rem;
+    padding: 0.9rem 1rem;
+    background: #ffffff;
+    border: 1px solid #fee2e2;
+    color: #7f1d1d;
+    font-size: 0.86rem;
+    font-weight: 850;
+    box-shadow: 0 10px 25px rgba(15,23,42,0.06);
+}
+
+.voda-choice-info i {
+    margin-top: 0.15rem;
+    color: #dc2626;
+}
+
+.voda-choice-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .voda-choice-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Τα κουμπιά μέσα στο vodaChoiceOptions δημιουργούνται δυναμικά από JS */
+.voda-choice-options > button {
+    position: relative;
+    overflow: hidden;
+    min-height: 8.5rem !important;
+    border-radius: 1.6rem !important;
+    padding: 1.35rem !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    font-size: 1.35rem !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.035em;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    box-shadow: 0 18px 45px rgba(15,23,42,0.14) !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease !important;
+}
+
+.voda-choice-options > button::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.20);
+}
+
+.voda-choice-options > button::after {
+    content: "→";
+    position: absolute;
+    top: 1.15rem;
+    right: 1.88rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 950;
+    transition: transform 0.22s ease;
+}
+
+.voda-choice-options > button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(15,23,42,0.22) !important;
+    filter: brightness(1.02);
+}
+
+.voda-choice-options > button:hover::after {
+    transform: translateX(4px);
+}
+
+.voda-choice-options > button:first-child {
+    background:
+        linear-gradient(135deg, #111827, #1e293b) !important;
+}
+
+.voda-choice-options > button:last-child {
+    background:
+        linear-gradient(135deg, #ef000f, #991b1b) !important;
+}
+
+.voda-choice-help {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .voda-choice-help {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.voda-choice-help div {
+    border-radius: 1.15rem;
+    padding: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.voda-choice-help strong {
+    display: block;
+    color: #0f172a;
+    font-size: 0.85rem;
+    font-weight: 950;
+}
+
+.voda-choice-help span {
+    display: block;
+    margin-top: 0.25rem;
+    color: #64748b;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .voda-choice-hero {
+        padding: 1.2rem;
+    }
+
+    .voda-choice-body {
+        padding: 1rem;
+    }
+
+    .voda-choice-options > button {
+        min-height: 7.25rem !important;
+        font-size: 1.15rem !important;
+    }
+}
+
