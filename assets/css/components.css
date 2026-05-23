@@ -2040,3 +2040,61 @@
     color: #dc2626 !important;
 }
 
+/* --- VODAFONE CARD MOBILE COLOR FIX --- */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) {
+    background:
+        linear-gradient(135deg, #7f1d1d 0%, #dc2626 45%, #0f172a 100%) !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.18) !important;
+}
+
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"])::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(15,23,42,0.35), transparent 36%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) > * {
+    position: relative;
+    z-index: 1;
+}
+
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .bg-white\/10,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .bg-white\/\[0\.16\],
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .backdrop-blur-sm,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .backdrop-blur-md {
+    background: rgba(255,255,255,0.12) !important;
+    border-color: rgba(255,255,255,0.22) !important;
+}
+
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) h3,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) p,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) div,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) span:not(.bg-white) {
+    color: #ffffff !important;
+}
+
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) span.bg-white {
+    color: #dc2626 !important;
+    background: #ffffff !important;
+}
+
+/* Mobile ειδικά */
+@media (max-width: 767px) {
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) {
+        min-height: 520px !important;
+        background:
+            linear-gradient(145deg, #991b1b 0%, #ef000f 48%, #111827 100%) !important;
+    }
+
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .text-4xl {
+        font-size: 2.5rem !important;
+        line-height: 1 !important;
+    }
+}
+
