@@ -2589,3 +2589,62 @@
     }
 }
 
+/* --- INFO / MENU MODAL CLEAN STYLE FIX --- */
+
+/* Όποιο modal ανοίγει από menu να μη φαίνεται ξεχειλωμένο */
+.modal-backdrop > div {
+    max-width: min(92vw, 980px);
+}
+
+/* Καλύτερη εμφάνιση σε απλά information panels */
+.info-modal,
+.info-panel,
+.contact-modal,
+.contact-panel {
+    background: #ffffff !important;
+    border-radius: 2rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28) !important;
+}
+
+/* Σκούρα μπάρα για τίτλους πληροφοριών */
+.info-modal-header,
+.info-panel-header,
+.contact-modal-header,
+.contact-panel-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    background:
+        linear-gradient(135deg, #0f172a, #1e3a8a) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Κείμενα πληροφοριών πιο καθαρά */
+.info-modal p,
+.info-panel p,
+.contact-modal p,
+.contact-panel p {
+    color: #475569 !important;
+    line-height: 1.6 !important;
+}
+
+/* Κινητά */
+@media (max-width: 640px) {
+    .modal-backdrop {
+        padding: 0.75rem !important;
+    }
+
+    .modal-backdrop > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 92vh !important;
+    }
+}
+
