@@ -1956,3 +1956,76 @@
     }
 }
 
+/* --- VODAFONE DESKTOP BALANCE FIX --- */
+@media (min-width: 768px) {
+    #offers-grid {
+        grid-auto-rows: 200px !important;
+        align-items: stretch;
+    }
+
+    #offers-grid > article {
+        min-height: 0;
+    }
+
+    /* Vodafone Σταθερή */
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) {
+        grid-row: span 3 / span 3 !important;
+        min-height: 660px !important;
+        background:
+            linear-gradient(135deg, #7f1d1d 0%, #dc2626 42%, #0f172a 100%) !important;
+        color: #ffffff !important;
+        border-color: rgba(255,255,255,0.16) !important;
+        overflow: hidden !important;
+        position: relative;
+    }
+
+    /* Inner highlight box / strip της Vodafone */
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .rounded-\[2\.5rem\],
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .rounded-\[2rem\] {
+        background:
+            linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08)) !important;
+        border-color: rgba(255,255,255,0.18) !important;
+        color: #ffffff !important;
+        box-shadow: none !important;
+    }
+
+    /* Κείμενα μέσα στην κάρτα να φαίνονται σωστά */
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) h3,
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) h4,
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) p,
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) span,
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) li {
+        color: inherit;
+    }
+
+    /* Η τιμή να μην κόβεται */
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .text-6xl {
+        font-size: 3.2rem !important;
+        line-height: 1 !important;
+    }
+
+    #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .text-5xl {
+        line-height: 1 !important;
+    }
+
+    /* Nova να κάθεται σωστά από κάτω */
+    #offers-grid article:has([data-modal-target="novaLinePhone"]) {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Fallback για Safari / browser χωρίς καλό :has support */
+@supports not selector(:has(*)) {
+    @media (min-width: 768px) {
+        #offers-grid > article:nth-child(2) {
+            grid-row: span 3 / span 3 !important;
+            min-height: 660px !important;
+            background:
+                linear-gradient(135deg, #7f1d1d 0%, #dc2626 42%, #0f172a 100%) !important;
+            color: #ffffff !important;
+            overflow: hidden !important;
+        }
+    }
+}
+
