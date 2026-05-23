@@ -2029,3 +2029,14 @@
     }
 }
 
+/* --- FIX VODAFONE NEW OFFER BADGE TEXT --- */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) span.bg-white {
+    color: #dc2626 !important;
+    background: #ffffff !important;
+    text-shadow: none !important;
+}
+
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) span.bg-white.text-red-700 {
+    color: #dc2626 !important;
+}
+
