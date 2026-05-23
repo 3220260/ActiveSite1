@@ -2591,11 +2591,6 @@
 
 /* --- INFO / MENU MODAL CLEAN STYLE FIX --- */
 
-/* Όποιο modal ανοίγει από menu να μη φαίνεται ξεχειλωμένο */
-.modal-backdrop > div {
-    max-width: min(92vw, 980px);
-}
-
 /* Καλύτερη εμφάνιση σε απλά information panels */
 .info-modal,
 .info-panel,
