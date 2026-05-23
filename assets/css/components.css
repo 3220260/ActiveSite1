@@ -2098,3 +2098,29 @@
     }
 }
 
+/* --- REMOVE DECORATIVE WIFI SIGNAL FROM VODAFONE CARD --- */
+
+/* Κρύβουμε το μεγάλο διακοσμητικό Wi‑Fi / dot που είναι πάνω στην κάρτα Vodafone */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .fa-wifi,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .fa-wifi::before,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .fa-signal,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .fa-circle {
+    animation: none !important;
+}
+
+/* Πιθανό decorative block επάνω αριστερά */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .absolute.top-6.left-6,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .absolute.top-8.left-8,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .absolute.left-6.top-6,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .absolute.left-8.top-8 {
+    display: none !important;
+}
+
+/* Αν υπάρχει custom decorative wifi wrapper */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .vodafone-wifi-decoration,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .vodafone-signal-decoration,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .wifi-decoration,
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .signal-decoration {
+    display: none !important;
+}
+
