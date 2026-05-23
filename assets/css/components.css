@@ -2059,7 +2059,7 @@
     z-index: 0;
 }
 
-#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) > * {
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) > *:not(button[data-modal-target="vodafoneFixedModal"]) {
     position: relative;
     z-index: 1;
 }
@@ -2122,5 +2122,29 @@
 #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .wifi-decoration,
 #offers-grid article:has([data-modal-target="vodafoneFixedModal"]) .signal-decoration {
     display: none !important;
+}
+
+/* --- FIX VODAFONE CARD CLICK OVERLAY + REMOVE DECORATIVE WIFI --- */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) > button[data-modal-target="vodafoneFixedModal"] {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 30 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    border: 0 !important;
+    cursor: pointer !important;
+}
+
+/* Κρύβει μόνο το μεγάλο decorative Wi-Fi κάτω αριστερά, όχι τα μικρά icons στα bullets */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) > i.fa-wifi.absolute {
+    display: none !important;
+}
+
+/* Τα ορατά στοιχεία της κάρτας μένουν πάνω από background αλλά κάτω από το click overlay */
+#offers-grid article:has([data-modal-target="vodafoneFixedModal"]) > div {
+    position: relative;
+    z-index: 2;
 }
 
