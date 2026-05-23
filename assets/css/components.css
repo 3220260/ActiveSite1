@@ -2148,3 +2148,303 @@
     z-index: 2;
 }
 
+/* --- INTERNET CHOICE MODAL MOBILE FIX --- */
+.internet-choice-modal {
+    isolation: isolate;
+}
+
+.internet-choice-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.94)),
+        radial-gradient(circle at top right, rgba(220, 38, 38, 0.20), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.20), transparent 34%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.22);
+}
+
+.internet-choice-sticky-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 950;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.internet-choice-sticky-title i {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.14);
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.internet-choice-sticky-title span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.internet-choice-close {
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    flex-shrink: 0;
+}
+
+.internet-choice-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 1.35rem 1.25rem;
+    background:
+        linear-gradient(135deg, #0f172a 0%, #1e3a8a 48%, #7f1d1d 100%);
+}
+
+.internet-choice-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.14;
+    pointer-events: none;
+}
+
+.internet-choice-hero-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.internet-choice-hero-glow-one {
+    width: 12rem;
+    height: 12rem;
+    right: -4rem;
+    top: -4rem;
+    background: rgba(255,255,255,0.18);
+}
+
+.internet-choice-hero-glow-two {
+    width: 14rem;
+    height: 14rem;
+    left: -5rem;
+    bottom: -6rem;
+    background: rgba(220,38,38,0.26);
+}
+
+.internet-choice-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: 9999px;
+    padding: 0.45rem 0.75rem;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.20);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 950;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.internet-choice-title {
+    margin-top: 0.9rem;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    line-height: 0.95;
+    font-weight: 950;
+    letter-spacing: -0.05em;
+}
+
+.internet-choice-subtitle {
+    margin-top: 0.75rem;
+    max-width: 35rem;
+    color: rgba(255,255,255,0.82);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    font-weight: 700;
+}
+
+.internet-choice-body {
+    overflow-y: auto;
+    padding: 1rem;
+    background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(220, 38, 38, 0.08), transparent 34%),
+        #f8fafc;
+}
+
+.internet-choice-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+    .internet-choice-body {
+        padding: 1.25rem;
+    }
+
+    .internet-choice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+.internet-provider-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.6rem;
+    padding: 1.1rem;
+    min-height: 12.5rem;
+    border: 1px solid rgba(226, 232, 240, 1);
+    background: #ffffff;
+    text-align: left;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.internet-provider-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.internet-provider-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.internet-provider-card-vodafone::before {
+    background: linear-gradient(135deg, #dc2626, transparent);
+}
+
+.internet-provider-card-nova::before {
+    background: linear-gradient(135deg, #2563eb, #f97316);
+}
+
+.internet-provider-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.internet-provider-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(15,23,42,0.18);
+}
+
+.internet-provider-card-vodafone .internet-provider-icon,
+.internet-provider-card-vodafone .internet-provider-price {
+    background: #dc2626;
+}
+
+.internet-provider-card-nova .internet-provider-icon,
+.internet-provider-card-nova .internet-provider-price {
+    background: #2563eb;
+}
+
+.internet-provider-price {
+    border-radius: 9999px;
+    padding: 0.4rem 0.7rem;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 950;
+}
+
+.internet-provider-card h4 {
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+    color: #0f172a;
+    font-size: 1.55rem;
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -0.05em;
+}
+
+.internet-provider-card strong {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-top: 0.25rem;
+    color: #334155;
+    font-size: 0.95rem;
+    font-weight: 900;
+}
+
+.internet-provider-card p {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.65rem;
+    color: #64748b;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    font-weight: 650;
+}
+
+.internet-provider-action {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    font-weight: 950;
+}
+
+.internet-provider-card-vodafone .internet-provider-action {
+    color: #dc2626;
+}
+
+.internet-provider-card-nova .internet-provider-action {
+    color: #2563eb;
+}
+
+@media (max-width: 640px) {
+    .internet-choice-hero {
+        padding: 1.2rem 1rem;
+    }
+
+    .internet-choice-title {
+        font-size: 2rem;
+    }
+
+    .internet-choice-subtitle {
+        font-size: 0.86rem;
+    }
+
+    .internet-provider-card {
+        min-height: auto;
+    }
+}
+
