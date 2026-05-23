@@ -46,10 +46,11 @@
 
   <link rel="stylesheet" href="assets/css/tailwind.css?v=20260429-2">
   <link rel="stylesheet" href="assets/css/base.css?v=20260522-1">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260523-31">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260523-32">
   <link rel="stylesheet" href="assets/css/animations.css?v=20260523-7">
   <link rel="stylesheet" href="assets/css/responsive.css?v=20260522-1">
   <link rel="stylesheet" href="assets/css/firefox-esr.css?v=20260523-1">
+  <link rel="stylesheet" href="assets/css/chatbot.css?v=20260523-1">
 
   <script type="application/ld+json">
   {
@@ -2486,73 +2487,96 @@
     </div>
     </div>
 
-    <div id="infoCoopModal" class="hidden fixed inset-0 z-[110] modal-backdrop flex items-center justify-center p-4">
-    <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden animate-[fadeIn_0.3s_ease-out] relative max-h-[90vh] overflow-y-auto custom-scroll">
+    <div id="infoCoopModal" class="hidden fixed inset-0 z-[110] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4">
+      <div class="info-coop-modal bg-white w-full sm:max-w-xl rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl overflow-hidden flex flex-col max-h-[92vh] sm:max-h-[90vh]">
 
-        <button type="button" data-modal-close="infoCoopModal" class="liquid-close absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold transition z-20 shadow-sm backdrop-blur-md">✕</button>
+        <div class="info-coop-header">
+          <div class="info-coop-title">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Πληροφορίες Συνεταιρισμού</span>
+          </div>
 
-        <div class="bg-[#0f2b5c] p-8 text-center relative overflow-hidden shrink-0">
-            <div class="absolute inset-0 bg-[url('../images/LOGO.webp')] bg-center bg-no-repeat opacity-10 blur-sm bg-contain"></div>
-            <img src="assets/images/LOGO.webp" alt="Λογότυπο Π.Κ.Σ.Α.Α" width="400" height="218" loading="lazy" decoding="async" class="h-20 mx-auto relative z-10 drop-shadow-lg">
-            <h3 class="text-white font-black text-xl mt-4 relative z-10">Π.Κ.Σ.Α.Α</h3>
-            <p class="text-blue-200 text-xs relative z-10">Προμηθευτικός &amp; Καταναλωτικός Συνεταιρισμός<br>Αστυνομικών Αττικής</p>
-            <p class="mt-2 text-xs text-slate-400">
-               Synetairismos Astynomikon Attikis · Συνεταιρισμός Αστυνομικών Αττικής · Π.Κ.Σ.Α.Α.
-          </p>
+          <button
+            type="button"
+            data-modal-close="infoCoopModal"
+            class="liquid-close info-coop-close"
+            aria-label="Κλείσιμο πληροφοριών">
+            ✕
+          </button>
         </div>
 
-        <div class="p-6 md:p-8 space-y-6">
-
-            <div class="flex flex-col gap-3">
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 text-xl">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Διεύθυνση</h4>
-                        <p class="text-sm text-slate-600">Καρύστου&nbsp;3, Αθήνα&nbsp;115&nbsp;23</p>
-                    </div>
-                </div>
-
-                    <div class="w-full h-64 rounded-xl overflow-hidden shadow-md border border-slate-200 mt-2">
-                       <iframe
-                        title="Χάρτης διεύθυνσης Π.Κ.Σ.Α.Α"
-                        class="w-full h-full border-0"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.5678!2d23.7654!3d37.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1980000000000%3A0x0!2zS2FyeXN0b3UgMywgQXRoZW5hIDExNSAyMw!5e0!3m2!1sen!2sgr!4v1710000000000"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        allowfullscreen
-                        loading="lazy">
-                    </iframe>
-                                        </div>
+        <div class="info-coop-scroll custom-scroll">
+          <div class="info-coop-hero">
+            <div class="info-coop-logo-box">
+              <img
+                src="assets/images/LOGO.webp"
+                alt="Λογότυπο Π.Κ.Σ.Α.Α"
+                width="400"
+                height="218"
+                loading="lazy"
+                decoding="async">
             </div>
 
-            <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 shrink-0 text-xl">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
+            <h3>Π.Κ.Σ.Α.Α</h3>
+            <p>Προμηθευτικός &amp; Καταναλωτικός Συνεταιρισμός Αστυνομικών Αττικής</p>
+            <span>Synetairismos Astynomikon Attikis</span>
+          </div>
+
+          <div class="info-coop-body">
+
+            <div class="info-coop-card">
+              <div class="info-coop-icon info-coop-icon-blue">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div class="info-coop-card-content">
+                <h4>Διεύθυνση</h4>
+                <p>Καρύστου 3, Αθήνα 115 23</p>
+              </div>
+            </div>
+
+            <div class="info-coop-map">
+              <iframe
+                title="Χάρτης διεύθυνσης Π.Κ.Σ.Α.Α"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.5678!2d23.7654!3d37.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1980000000000%3A0x0!2zS2FyeXN0b3UgMywgQXRoZW5hIDExNSAyMw!5e0!3m2!1sen!2sgr!4v1710000000000"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="info-coop-grid">
+              <a href="tel:2105245210" class="info-coop-action info-coop-action-phone">
+                <i class="fa-solid fa-phone"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900">Τηλέφωνα</h4>
-                    <a href="tel:2105245210" class="block text-lg font-black text-slate-800 hover:text-green-600 transition">210&nbsp;5245210</a>
-                    <a href="tel:6936799908" class="block text-sm text-slate-600 hover:text-green-600 transition">6936799908&nbsp;(Κινητό)</a>
+                  <strong>210 5245210</strong>
+                  <span>Τηλέφωνο γραφείου</span>
                 </div>
-            </div>
+              </a>
 
-            <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-600 shrink-0 text-xl">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
+              <a href="tel:6936799908" class="info-coop-action info-coop-action-mobile">
+                <i class="fa-solid fa-mobile-screen"></i>
                 <div>
-                    <h4 class="font-bold text-slate-900">Email</h4>
-                    <a href="mailto:synetelas2011@gmail.com" class="text-sm font-medium text-slate-600 hover:text-orange-600 break-all">synetelas2011@gmail.com</a>
-
+                  <strong>6936799908</strong>
+                  <span>Κινητό</span>
                 </div>
+              </a>
             </div>
 
+            <a href="mailto:synetelas2011@gmail.com" class="info-coop-action info-coop-action-email">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>synetelas2011@gmail.com</strong>
+                <span>Email επικοινωνίας</span>
+              </div>
+            </a>
 
+          </div>
         </div>
+
+      </div>
     </div>
 
-    </div>
     <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-8">
     <div class="rounded-[28px] bg-gradient-to-r from-[#5b4ce6] to-[#7360f2] shadow-xl overflow-hidden">
         <div class="relative px-6 md:px-10 py-8 md:py-10">
@@ -2826,6 +2850,7 @@
 <script src="assets/js/image-preview.js?v=20260522-1"></script>
 <script src="assets/js/ui-modals.js?v=20260522-1"></script>
 <script src="assets/js/main.js?v=12"></script>
+<script src="assets/js/chatbot.js?v=20260523-1"></script>
 
 </body>
 </html>
