@@ -1204,10 +1204,13 @@ function initializePage() {
     // Preloader
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => { preloader.style.display = 'none'; document.body.classList.remove('loading'); }, 700);
-        }, 300);
+       requestAnimationFrame(() => {
+    preloader.classList.add('opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+        preloader.style.display = 'none';
+        document.body.classList.remove('loading');
+    }, 200);
+});
     }
 
     // Cookies Check
@@ -1286,7 +1289,9 @@ document.addEventListener('touchend', handleProcessSwipeEnd, { passive: true });
     });
 
     initializeOfferCardTracking();
-    loadSiteUpdateNotice();
+    window.addEventListener('load', () => {
+    setTimeout(loadSiteUpdateNotice, 1000);
+});
 }
 
 if (document.readyState === 'loading') {
