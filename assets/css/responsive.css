@@ -102,3 +102,83 @@
         scroll-behavior: auto !important;
     }
 }
+
+/* --- MOBILE FIX: μικρότερη κάρτα Κινητής Τηλεφωνίας --- */
+@media (max-width: 767px) {
+  #offers-grid {
+    gap: 1rem !important;
+  }
+
+  #offers-grid .premium-mobile-card {
+    min-height: min(560px, calc(100svh - 120px)) !important;
+    padding: 1.25rem !important;
+    border-radius: 1.5rem !important;
+  }
+
+  #offers-grid .premium-mobile-card > .relative.z-10 {
+    justify-content: center !important;
+    gap: 0.9rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .mobile-title-panel {
+    padding: 0.9rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .mobile-title-panel > span:first-child {
+    font-size: 17px !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .mobile-title-panel .text-2xl,
+  #offers-grid .premium-mobile-card .mobile-title-panel .text-xl {
+    font-size: 1.15rem !important;
+    line-height: 1.15 !important;
+  }
+
+  #offers-grid .premium-mobile-card .mt-10 {
+    margin-top: 0.4rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .mb-8 {
+    margin-bottom: 0 !important;
+  }
+
+  #offers-grid .premium-mobile-card .text-2xl {
+    font-size: 1.15rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .text-3xl {
+    font-size: 1.75rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .text-xl {
+    font-size: 1rem !important;
+  }
+
+  #offers-grid .premium-mobile-card ul {
+    margin-top: 1rem !important;
+  }
+
+  #offers-grid .premium-mobile-card ul li {
+    gap: 0.75rem !important;
+  }
+
+  #offers-grid .premium-mobile-card ul li > div.w-10 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  #offers-grid .premium-mobile-card ul li span {
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+  }
+
+  #offers-grid .premium-mobile-card .mobile-provider-cta {
+    padding: 0.85rem !important;
+  }
+
+  #offers-grid .premium-mobile-card .mobile-provider-bottom {
+    font-size: 0.75rem !important;
+  }
+}
