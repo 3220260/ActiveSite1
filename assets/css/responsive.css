@@ -582,3 +582,15 @@
     display: none;
   }
 }
+
+
+
+
+
+
+
+
+/* --- TEMP: HIDE FLOATING CHATBOT --- */
+.floating-chat {
+  display: none !important;
+}
