@@ -2900,3 +2900,34 @@
     }
 }
 
+.internet-provider-card .internet-provider-top,
+.internet-provider-card .internet-provider-action {
+  display: flex;
+}
+
+.internet-provider-card .internet-provider-title {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  font-weight: 950;
+}
+
+.internet-provider-card .internet-provider-description {
+  display: block;
+}
+
+.internet-provider-card .internet-provider-top,
+.internet-provider-card .internet-provider-action {
+  display: flex;
+}
+
+.internet-provider-card .internet-provider-title {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  font-weight: 950;
+}
+
+.internet-provider-card .internet-provider-description {
+  display: block;
+}

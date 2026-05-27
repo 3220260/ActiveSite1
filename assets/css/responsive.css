@@ -441,3 +441,144 @@
     font-size: 1rem;
   }
 }
+
+
+
+
+/* --- FLOATING CHATBOT --- */
+.floating-chat {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.chat-panel {
+  width: 390px;
+  height: 620px;
+  max-width: calc(100vw - 28px);
+  max-height: calc(100vh - 120px);
+  background: #111;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: none;
+  transform: translateY(18px) scale(0.96);
+  opacity: 0;
+  transition: all 0.22s ease;
+}
+
+.chat-panel.open {
+  display: block;
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.chat-panel iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.chat-bubble {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0f2b5c, #1d8cff);
+  box-shadow: 0 16px 40px rgba(15, 43, 92, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.chat-bubble:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 46px rgba(15, 43, 92, 0.5);
+}
+
+.chat-bubble.open {
+  background: #dc2626;
+  color: white;
+  font-size: 42px;
+}
+
+.chat-label {
+  position: absolute;
+  right: 90px;
+  bottom: 16px;
+  background: #ffffff;
+  color: #0f2b5c;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.chat-label::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid white;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.chat-label.hidden {
+  display: none;
+}
+
+@keyframes floatBubble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.chat-bubble:not(.open) {
+  animation: floatBubble 2.6s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+  .floating-chat {
+    right: 14px;
+    bottom: 90px;
+  }
+
+  .chat-panel {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+  }
+
+  .chat-bubble {
+    width: 68px;
+    height: 68px;
+    font-size: 34px;
+  }
+
+  .chat-label {
+    display: none;
+  }
+}

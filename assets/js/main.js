@@ -1336,3 +1336,60 @@ window.onpopstate = function (event) {
     unlockPageScrollIfIdle();
     requestAnimationFrame(refreshVisibleOfferCards);
 };
+
+
+
+
+/* --- FLOATING CHATBOT --- */
+document.addEventListener("DOMContentLoaded", function () {
+  const CHAT_URL = "https://chat-bot-flame-six.vercel.app";
+
+  const chatBubble = document.getElementById("chatBubble");
+  const chatPanel = document.getElementById("chatPanel");
+  const chatFrame = document.getElementById("chatFrame");
+  const bubbleIcon = document.getElementById("bubbleIcon");
+  const chatLabel = document.getElementById("chatLabel");
+
+  if (!chatBubble || !chatPanel || !chatFrame || !bubbleIcon || !chatLabel) {
+    return;
+  }
+
+  let isOpen = false;
+  let loaded = false;
+
+  chatBubble.addEventListener("click", function () {
+    isOpen = !isOpen;
+
+    if (!loaded) {
+      chatFrame.src = CHAT_URL;
+      loaded = true;
+    }
+
+    chatPanel.classList.toggle("open", isOpen);
+    chatBubble.classList.toggle("open", isOpen);
+    chatLabel.classList.toggle("hidden", isOpen);
+
+    bubbleIcon.textContent = isOpen ? "×" : "👮‍♀️";
+    chatBubble.setAttribute(
+      "aria-label",
+      isOpen ? "Κλείσιμο chatbot" : "Άνοιγμα chatbot"
+    );
+
+    if (typeof trackEvent === "function") {
+      trackEvent(isOpen ? "chat_open" : "chat_close", {
+        source: "floating_chat"
+      });
+    }
+  });
+
+  window.addEventListener("message", function (event) {
+    if (event.data === "closeChat" || event.data === "minimizeChat") {
+      isOpen = false;
+      chatPanel.classList.remove("open");
+      chatBubble.classList.remove("open");
+      chatLabel.classList.remove("hidden");
+      bubbleIcon.textContent = "👮‍♀️";
+      chatBubble.setAttribute("aria-label", "Άνοιγμα chatbot");
+    }
+  });
+});

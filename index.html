@@ -123,11 +123,11 @@
 </script>
 
 </head>
-<body>
+<body id="top">
 
-   
 
-    <nav data-action="go-home" class="fixed top-0 w-full z-50 bg-[#6FA4D9] shadow-md transition-all duration-300 border-b border-blue-300/50 cursor-pointer">
+
+    <nav aria-label="Κύρια πλοήγηση" data-action="go-home" class="fixed top-0 w-full z-50 bg-[#6FA4D9] shadow-md transition-all duration-300 border-b border-blue-300/50 cursor-pointer">
     <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between relative">
 
     <button type="button" data-action="toggle-sidebar" class="z-50 shrink-0 group flex flex-col items-start gap-[5px] p-3 cursor-pointer hover:bg-white/10 rounded-xl transition-all mr-2">
@@ -195,7 +195,7 @@
             σταθερής, internet, τηλεόρασης, υγείας και συνεργαζόμενων υπηρεσιών.
           </p>
 
-          <div class="official-intro-tags" aria-label="Κατηγορίες προσφορών">
+          <div class="official-intro-tags" role="group" aria-label="Κατηγορίες προσφορών">
             <button type="button" data-modal-target="mobileModal">
               <i class="fa-solid fa-mobile-screen"></i>
               <span>Κινητή</span>
@@ -2131,7 +2131,7 @@
           <div class="relative z-10">
             <div class="internet-choice-kicker">
               <i class="fa-solid fa-wifi"></i>
-              Σταθερή & Internet
+              Σταθερή &amp; Internet
             </div>
 
             <h3 class="internet-choice-title">
@@ -2148,59 +2148,59 @@
           <div class="internet-choice-grid">
 
             <button
-              type="button"
-              data-modal-close="internetChoiceModal"
-              data-modal-target="vodafoneFixedModal"
-              class="internet-provider-card internet-provider-card-vodafone">
-              <div class="internet-provider-top">
-                <div class="internet-provider-icon">
-                  <i class="fa-solid fa-wifi"></i>
-                </div>
+            type="button"
+            data-modal-close="internetChoiceModal"
+            data-modal-target="vodafoneFixedModal"
+            class="internet-provider-card internet-provider-card-vodafone">
+            <span class="internet-provider-top">
+            <span class="internet-provider-icon">
+            <i class="fa-solid fa-wifi"></i>
+            </span>
 
-                <span class="internet-provider-price">
-                  από 16,00€
-                </span>
-              </div>
+            <span class="internet-provider-price">
+            από 16,00€
+            </span>
+            </span>
 
-              <h4>Vodafone</h4>
-              <strong>Σταθερή & Internet</strong>
+            <span class="internet-provider-title">Vodafone</span>
+            <strong>Σταθερή &amp; Internet</strong>
 
-              <p>
-                ADSL/FTTC, FTTH 100 Mbps και FTTH 300 Mbps με 2 μήνες δωρεάν στα FTTH πακέτα.
-              </p>
+            <span class="internet-provider-description">
+            ADSL/FTTC, FTTH 100 Mbps και FTTH 300 Mbps με 2 μήνες δωρεάν στα FTTH πακέτα.
+            </span>
 
-              <div class="internet-provider-action">
-                Προβολή προσφοράς
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+            <span class="internet-provider-action">
+            Προβολή προσφοράς
+            <i class="fa-solid fa-arrow-right"></i>
+            </span>
             </button>
 
             <button
-              type="button"
-              data-modal-close="internetChoiceModal"
-              data-modal-target="novaLinePhone"
-              class="internet-provider-card internet-provider-card-nova">
-              <div class="internet-provider-top">
-                <div class="internet-provider-icon">
-                  <i class="fa-solid fa-tower-broadcast"></i>
-                </div>
+            type="button"
+            data-modal-close="internetChoiceModal"
+            data-modal-target="novaLinePhone"
+            class="internet-provider-card internet-provider-card-nova">
+            <span class="internet-provider-top">
+            <span class="internet-provider-icon">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            </span>
 
-                <span class="internet-provider-price">
-                  17,90€
-                </span>
-              </div>
+            <span class="internet-provider-price">
+            17,90€
+            </span>
+            </span>
 
-              <h4>Nova</h4>
-              <strong>Σταθερό & Internet</strong>
+            <span class="internet-provider-title">Nova</span>
+            <strong>Σταθερό &amp; Internet</strong>
 
-              <p>
-                Σταθερό και internet με δωρεάν τέλη και ταχύτητες έως 100 Mbps.
-              </p>
+            <span class="internet-provider-description">
+            Σταθερό και internet με δωρεάν τέλη και ταχύτητες έως 100 Mbps.
+            </span>
 
-              <div class="internet-provider-action">
-                Προβολή προσφοράς
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+            <span class="internet-provider-action">
+            Προβολή προσφοράς
+            <i class="fa-solid fa-arrow-right"></i>
+            </span>
             </button>
 
           </div>
@@ -2236,7 +2236,7 @@
 
               <h3 class="text-white font-black text-3xl md:text-5xl leading-[0.95] tracking-tight">
                 Σταθερή Τηλεφωνία<br>
-                <span class="text-red-100">& Internet</span>
+                <span class="text-red-100">&amp; Internet</span>
               </h3>
 
               <p class="text-red-100 text-sm md:text-base mt-4 max-w-xl leading-relaxed font-semibold">
@@ -2300,7 +2300,7 @@
               <i class="fa-solid fa-phone-flip"></i>
               <div>
                 <strong>Κλήσεις</strong>
-                <span>Απεριόριστες κλήσεις σε σταθερά & 300 λεπτά προς κινητά.</span>
+                <span>Απεριόριστες κλήσεις σε σταθερά &amp; 300 λεπτά προς κινητά.</span>
               </div>
             </div>
 
@@ -2383,7 +2383,7 @@
           <div class="vodafone-contact-actions">
             <a href="tel:2105245210">
               <i class="fa-solid fa-phone"></i>
-              <span>210 5245210</span>
+              <strong>210&nbsp;5245210</strong>
             </a>
 
             <a href="tel:6985177202">
@@ -2548,7 +2548,7 @@
               <a href="tel:2105245210" class="info-coop-action info-coop-action-phone">
                 <i class="fa-solid fa-phone"></i>
                 <div>
-                  <strong>210 5245210</strong>
+                  <strong>210&nbsp;5245210</strong>
                   <span>Τηλέφωνο γραφείου</span>
                 </div>
               </a>
@@ -2861,6 +2861,33 @@
     <span>Επικοινωνία</span>
   </button>
 </nav>
+
+
+
+
+
+
+<!-- Chatttttt -->
+<div class="floating-chat">
+  <div id="chatPanel" class="chat-panel">
+    <iframe
+      id="chatFrame"
+      src="about:blank"
+      title="Sofia Chatbot"
+      allow="microphone">
+    </iframe>
+  </div>
+
+  <button id="chatBubble" class="chat-bubble" type="button" aria-label="Άνοιγμα chatbot">
+    <span id="bubbleIcon">👮‍♀️</span>
+    <span id="chatLabel" class="chat-label">Ρώτησε τη Sofia</span>
+  </button>
+</div>
+
+
+
+
+
 
 <script src="assets/js/offers-data.js?v=20260502"></script>
 <script src="assets/js/offers-renderer.js?v=20260502"></script>
