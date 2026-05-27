@@ -182,3 +182,72 @@
     font-size: 0.75rem !important;
   }
 }
+
+/* --- FIX: Πληροφορίες modal πιο μικρό στο desktop --- */
+#infoCoopModal .info-coop-modal {
+  width: min(92vw, 520px) !important;
+  max-height: 84vh !important;
+  border-radius: 28px !important;
+}
+
+#infoCoopModal .info-coop-scroll {
+  overflow-y: auto !important;
+  padding: 16px !important;
+}
+
+#infoCoopModal .info-coop-header {
+  padding: 16px 18px !important;
+}
+
+#infoCoopModal .info-coop-hero {
+  padding: 16px !important;
+  text-align: center !important;
+}
+
+#infoCoopModal .info-coop-logo-box img {
+  max-width: 110px !important;
+  height: auto !important;
+}
+
+#infoCoopModal .info-coop-hero h3 {
+  font-size: 24px !important;
+  line-height: 1.1 !important;
+}
+
+#infoCoopModal .info-coop-hero p {
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+}
+
+#infoCoopModal .info-coop-map iframe {
+  width: 100% !important;
+  height: 180px !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+}
+
+#infoCoopModal .info-coop-body {
+  display: grid !important;
+  gap: 12px !important;
+}
+
+#infoCoopModal .info-coop-action,
+#infoCoopModal .info-coop-card {
+  padding: 14px !important;
+}
+
+@media (max-width: 640px) {
+  #infoCoopModal .info-coop-modal {
+    width: 100% !important;
+    max-height: 92vh !important;
+    border-radius: 28px 28px 0 0 !important;
+  }
+
+  #infoCoopModal .info-coop-logo-box img {
+    max-width: 95px !important;
+  }
+
+  #infoCoopModal .info-coop-map iframe {
+    height: 170px !important;
+  }
+}
